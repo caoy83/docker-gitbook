@@ -7,9 +7,7 @@ ARG VERSION=3.2.3
 LABEL version=$VERSION
 
 # Install gitbook
-RUN npm config set unsafe-perm &&\
-# npm config set registry https://registry.npm.taobao.org &&\
- npm install gitbook-cli -g &&\
+RUN npm install gitbook-cli -g &&\
  gitbook fetch ${VERSION} &&\
  npm cache clear --force  &&\
- rm -rf /tmp/*
+ rm -rf /tmp/
